@@ -93,6 +93,7 @@ export const useTodos = () => {
       const newTodo = await createTodo(trimmed);
 
       setTodos(prev => [...prev, newTodo]);
+      setFocusTrigger(prev => prev + 1);
 
       return true;
     } catch {
@@ -112,7 +113,6 @@ export const useTodos = () => {
       await deleteTodo(todoId);
 
       setTodos(prev => prev.filter(todo => todo.id !== todoId));
-      setFocusTrigger(prev => prev + 1);
     } catch {
       setError(ErrorText.Delete);
     } finally {
@@ -146,8 +146,6 @@ export const useTodos = () => {
 
       if (failedIds.length > 0) {
         setError(ErrorText.Delete);
-      } else {
-        setFocusTrigger(prev => prev + 1);
       }
     } finally {
       setDeletingIds(prev =>
