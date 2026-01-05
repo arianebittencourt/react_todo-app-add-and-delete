@@ -8,7 +8,6 @@ type Props = {
   isTemp?: boolean;
   isLoading?: boolean;
   onDelete?: (id: number) => void;
-  onToggle?: (todo: Todo) => void;
 };
 
 export const TodoItem: React.FC<Props> = ({
