@@ -54,7 +54,7 @@ export const App: React.FC = () => {
           />
         ))}
 
-        {tempTodo && <TodoItem todo={tempTodo} key={0} isTemp isLoading />}
+        {tempTodo && <TodoItem todo={tempTodo} key={-1} isTemp isLoading />}
 
         {todos.length > 0 && (
           <TodoFooter
