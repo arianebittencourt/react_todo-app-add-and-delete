@@ -154,10 +154,7 @@ export const useTodos = () => {
     }
   };
 
-  const handleToggle = async (todo: Todo) => {
-    const { id, completed } = todo;
 
-    setDeletingIds(prev => [...prev, id]);
 
     try {
       const updatedTodo = await updateTodo(id, { completed: !completed });
