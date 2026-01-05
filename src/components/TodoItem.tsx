@@ -35,7 +35,6 @@ export const TodoItem: React.FC<Props> = ({
           type="checkbox"
           className="todo__status"
           checked={todo.completed}
-          onChange={() => onToggle?.(todo)}
           disabled={isLoading || isTemp}
         />
       </label>
