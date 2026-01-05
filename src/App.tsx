@@ -24,7 +24,6 @@ export const App: React.FC = () => {
     handleAdd,
     handleDelete,
     handleClearCompleted,
-    handleToggle,
     hideError,
   } = useTodos();
 
@@ -49,12 +48,11 @@ export const App: React.FC = () => {
             todo={todo}
             key={todo.id}
             onDelete={handleDelete}
-            onToggle={handleToggle}
             isLoading={deletingIds.includes(todo.id)}
           />
         ))}
 
-        {tempTodo && <TodoItem todo={tempTodo} key={-1} isTemp isLoading />}
+        {tempTodo && <TodoItem todo={tempTodo} key={temp} isTemp isLoading />}
 
         {todos.length > 0 && (
           <TodoFooter
