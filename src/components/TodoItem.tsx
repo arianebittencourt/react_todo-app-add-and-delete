@@ -15,7 +15,6 @@ export const TodoItem: React.FC<Props> = ({
   isTemp,
   isLoading,
   onDelete,
-  onToggle,
 }) => {
   const handleDeleteClick = () => {
     if (!onDelete || isLoading || isTemp) {
